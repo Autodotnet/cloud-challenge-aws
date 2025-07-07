@@ -12,7 +12,10 @@ Este é meu projeto do **Cloud Resume Challenge**, uma iniciativa para demonstra
 - **Backend**: API Gateway + Lambda Functions (Python)
 - **Banco de Dados**: DynamoDB
 - **Infrastructure as Code**: Terraform
-- **CI/CD**: Automatização de deploy
+- **CI/CD**: Automatização de deploy (em construção)
+
+  ![446302384-cedea404-911f-431d-bae7-fd61f69e3abd](https://github.com/user-attachments/assets/00de3710-1146-4aa5-b940-22ea34fe3e2f)
+
 
 ## 🚀 Tecnologias Utilizadas
 
