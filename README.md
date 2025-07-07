@@ -16,10 +16,12 @@ Este é meu projeto do **Cloud Resume Challenge**, uma iniciativa para demonstra
 
 ## 🚀 Tecnologias Utilizadas
 
-- **AWS Services**: S3, CloudFront, API Gateway, Lambda, DynamoDB
+- **AWS Services**: S3, CloudFront, API Gateway, Lambda, DynamoDB, ACM (AWS Certificate Manager)
 - **Languages**: Python, JavaScript, HTML, CSS
 - **Infrastructure**: Terraform
 - **Version Control**: Git
+- **DNS**: Cloudflare
+
 
 ## 📁 Estrutura do Projeto
 
@@ -27,8 +29,7 @@ Este é meu projeto do **Cloud Resume Challenge**, uma iniciativa para demonstra
 ├── frontend/           # Código do site estático
 │   ├── index.html     # Página principal
 │   ├── assets/        # Imagens e recursos
-│   ├── scripts/       # JavaScript
-│   └── styles/        # CSS
+│   └── scripts/       # JavaScript
 ├── backend/           # Funções Lambda
 │   ├── lambda_get.py  # Buscar contador
 │   └── lambda_update_item.py # Atualizar contador
@@ -78,5 +79,5 @@ O site está disponível em: [umamicloudchallenge.org](https://www.umamicloudcha
 
 **Allan Zanella**
 - 📧 Email: allan_zan@hotmail.com
-- 💼 LinkedIn: [allan-zanella](https://www.linkedin.com/in/allan-zanella-885008ab/)
+- 💼 LinkedIn: [allan-zanella](https://www.linkedin.com/in/allan-zanella)
 - 🏆 Certificações: AWS Solutions Architect Associate, AWS Cloud Practitioner

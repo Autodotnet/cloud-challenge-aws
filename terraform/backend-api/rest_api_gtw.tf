@@ -1,7 +1,7 @@
 
 resource "aws_api_gateway_rest_api" "test_api" {
-  name        = "test_api"
-  description = "test api that call lambda"
+  name        = "counter_api"
+  description = "enable Lambda functions to call DynamoDB from www"
 
   endpoint_configuration {
     types = ["REGIONAL"]
@@ -10,9 +10,7 @@ resource "aws_api_gateway_rest_api" "test_api" {
 }
 
 
-#CORS
-
-#create the apigw resource
+#create the apigw resources
 
 resource "aws_api_gateway_resource" "read" {
   rest_api_id = aws_api_gateway_rest_api.test_api.id
@@ -28,7 +26,7 @@ resource "aws_api_gateway_resource" "update" {
 
 }
 
-#create the http method
+#create the http methods
 
 resource "aws_api_gateway_method" "post_get" {
   rest_api_id   = aws_api_gateway_rest_api.test_api.id
@@ -100,21 +98,12 @@ resource "aws_api_gateway_deployment" "counter" {
       aws_api_gateway_resource.update.id,
       aws_api_gateway_method.post_get.id,
       aws_api_gateway_method.post_update.id,
-      aws_api_gateway_method.options_read.id,
-      aws_api_gateway_method.options_update.id,
       aws_api_gateway_integration.integration_get.id,
       aws_api_gateway_integration.integration_update.id,
-      aws_api_gateway_integration.options_integration_read.id,
-      aws_api_gateway_integration.options_integration_update.id,
     ]))
   }
 
-  depends_on = [
-    aws_api_gateway_integration.options_integration_update,
-    aws_api_gateway_integration.options_integration_read,
-    aws_api_gateway_integration_response.options_integration_response_read,
-    aws_api_gateway_integration_response.options_integration_response_update
-  ]
+  
   
 
 
