@@ -80,7 +80,3 @@ O site está disponível em: [umamicloudchallenge.org](https://www.umamicloudcha
 - 📧 Email: allan_zan@hotmail.com
 - 💼 LinkedIn: [allan-zanella](https://www.linkedin.com/in/allan-zanella-885008ab/)
 - 🏆 Certificações: AWS Solutions Architect Associate, AWS Cloud Practitioner
-
-## 📝 Licença
-
-Este projeto é open source e está disponível sob a [MIT License](LICENSE).
