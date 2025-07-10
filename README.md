@@ -1,10 +1,12 @@
 # Cloud Resume Challenge - AWS
 
-Um projeto completo de currículo online com contador de visitantes, implementado usando serviços AWS e Infrastructure as Code.
+Um projeto Cloud completo de aplicação web, um currículo online com contador de visitantes, implementado usando serviços AWS e Infrastructure as Code.
 
 ## 🎯 Sobre o Projeto
 
-Este é meu projeto do **Cloud Resume Challenge**, uma iniciativa para demonstrar habilidades práticas em cloud computing. O projeto consiste em um site de currículo pessoal com um contador de visitantes que persiste os dados em um banco de dados na nuvem.
+The Cloud Resume Challenge é um projeto hands-on feito para preencher lacunas de conhecimento deixadas pelas certificações de Cloud. Ele incorpora várias skills que engenherios de Cloud e DevOps usam no dia a dia. 
+
+https://cloudresumechallenge.dev/docs/the-challenge/aws/
 
 ## 🏗️ Arquitetura
 
