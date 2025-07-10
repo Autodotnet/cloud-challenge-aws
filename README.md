@@ -24,6 +24,7 @@ Este é meu projeto do **Cloud Resume Challenge**, uma iniciativa para demonstra
 - **Infrastructure**: Terraform
 - **Version Control**: Git
 - **DNS**: Cloudflare
+- **SSO**: IAM Identity Center
 
 
 ## 📁 Estrutura do Projeto
