@@ -87,10 +87,11 @@ resource "aws_lambda_permission" "apigw_lambda2" {
 
 }
 
-
 #create the stage
 resource "aws_api_gateway_deployment" "counter" {
   rest_api_id = aws_api_gateway_rest_api.test_api.id
+
+  depends_on = [aws_api_gateway_integration.options_integration_update, aws_api_gateway_integration.options_integration_read]
 
   triggers = {
     redeployment = sha1(jsonencode([
@@ -102,11 +103,7 @@ resource "aws_api_gateway_deployment" "counter" {
       aws_api_gateway_integration.integration_update.id,
     ]))
   }
-
   
-  
-
-
   lifecycle {
     create_before_destroy = true
   }

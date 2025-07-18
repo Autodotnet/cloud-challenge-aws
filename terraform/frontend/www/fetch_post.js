@@ -1,4 +1,4 @@
-const url = 'https://xevo4oah98.execute-api.us-east-1.amazonaws.com/dev/update'
+const url = 'https://9qc2l9isn8.execute-api.us-east-1.amazonaws.com/dev/update'
 const update = {
     "operation": "update",
     "payload": {
