@@ -25,7 +25,7 @@ jobs:
           cd terraform/backend-api/lambda_function_update
           zip -r ../lambda_function_update.zip ./
 
-           - name: Deploy to Lambda
+      - name: Deploy to Lambda
         run: |
           aws lambda update-function-code \
             --function-name my-lambda-function \
