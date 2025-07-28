@@ -1,0 +1,40 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  get_caller_identity:
+    name: Deploy Lambda
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Zip Lambda function
+        run: |
+          cd terraform/backend-api/lambda_function_update
+          zip -r ../lambda_function_update.zip ./
+
+           - name: Deploy to Lambda
+        run: |
+          aws lambda update-function-code \
+            --function-name my-lambda-function \
+            --zip-file fileb://lambda_function_update.zip
+
+            
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHub_Actions_Role
+          aws-region: us-east-1
+
