@@ -23,6 +23,12 @@ jobs:
           cd terraform/backend-api/lambda_function_update
           zip -r ../lambda_function_update.zip ./
 
+      - name: Configure AWS credentials from Test account
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHub_Actions_Role
+          aws-region: us-east-1
+
       - name: Deploy to Lambda
         run: |
           aws lambda update-function-code \
@@ -30,9 +36,5 @@ jobs:
             --zip-file fileb://lambda_function_update.zip
 
             
-      - name: Configure AWS credentials from Test account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GitHub_Actions_Role
-          aws-region: us-east-1
+
 
