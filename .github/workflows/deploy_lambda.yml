@@ -19,8 +19,8 @@ jobs:
 
       - name: Zip Lambda function
         run: |
-          cd terraform/backend-api/lambda_function_update
-          zip -r ../lambda_function_update.zip ./
+          cd lambda
+          zip -r ../lambda.zip ./
 
       - name: Configure AWS credentials from Test account
         uses: aws-actions/configure-aws-credentials@v4
@@ -32,7 +32,7 @@ jobs:
         run: |
           aws lambda update-function-code \
             --function-name my-lambda-function \
-            --zip-file fileb://lambda_function_update.zip
+            --zip-file fileb://lambda.zip
 
             
 
