@@ -1,4 +1,4 @@
-const url = 'https://xcquof1gs4.execute-api.us-east-1.amazonaws.com/GET/DynamoDBOperations'
+const url = 'https://25l04ftyd2.execute-api.us-east-1.amazonaws.com/dev/update'
 const update = {
     "operation": "update",
     "payload": {
@@ -15,7 +15,7 @@ const update = {
     }
 }
     
-    const options = {
+const options = {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',

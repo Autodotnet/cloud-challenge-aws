@@ -32,16 +32,23 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
 ## 📁 Estrutura do Projeto
 
 ```
-├── frontend/           # Código do site estático
-│   ├── index.html     # Página principal
-│   ├── assets/        # Imagens e recursos
-│   └── scripts/       # JavaScript
-├── backend/           # Funções Lambda
-│   ├── lambda_get.py  # Buscar contador
-│   └── lambda_update_item.py # Atualizar contador
-└── terraform/         # Infrastructure as Code
-    ├── backend-api/   # API e Lambda
-    └── frontend/      # S3 e CloudFront
+├── frontend/                    # Código do site estático
+│   ├── index.html              # Página principal
+│   ├── assets/                 # Imagens e recursos
+│   └── scripts/                # JavaScript (fetch_get.js, fetch_post.js)
+├── backend/                    # Funções Lambda
+│   ├── lambda_get.py          # Buscar contador do DynamoDB
+│   ├── lambda_update_item.py  # Atualizar contador
+│   └── post_request.json      # Exemplo de requisição
+├── cypress/                    # Testes automatizados
+│   └── api_test.cy.js         # Testes da API
+└── terraform/                 # Infrastructure as Code
+    ├── modules/
+    │   ├── backend-api/       # Módulo API Gateway + Lambda + DynamoDB
+    │   └── frontend/          # Módulo S3 + CloudFront
+    ├── www/                   # Arquivos web para deploy
+    ├── main.tf               # Configuração principal
+    └── outputs.tf            # Outputs dos recursos
 ```
 
 ## 🛠️ Como Executar
@@ -53,19 +60,24 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
 
 ### Deploy da Infraestrutura
 
-1. **Backend (API + Database)**:
+1. **Deploy Completo (Recomendado)**:
 ```bash
-cd terraform/backend-api
+cd terraform
 terraform init
 terraform plan
 terraform apply
 ```
 
-2. **Frontend (S3 + CloudFront)**:
+2. **Deploy por Módulos**:
 ```bash
-cd terraform/frontend
+# Backend (API + Database)
+cd terraform/modules/backend-api
 terraform init
-terraform plan
+terraform apply
+
+# Frontend (S3 + CloudFront)
+cd terraform/modules/frontend
+terraform init
 terraform apply
 ```
 

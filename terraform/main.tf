@@ -1,0 +1,28 @@
+terraform {
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
+    }
+  }
+
+  required_version = ">= 1.2.0"
+}
+
+provider "aws" {
+  region  = "us-east-1"
+  profile = "dev-test"
+}
+
+module "backend" {
+  source = "./modules/backend-api"
+  
+}
+
+
+
+module "frontend" {
+  source = "./modules/frontend"
+
+}
