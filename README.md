@@ -4,7 +4,7 @@ Um projeto Cloud completo de aplicação web, um currículo online com contador 
 
 ## 🎯 Sobre o Projeto
 
-The Cloud Resume Challenge é um projeto hands-on feito para preencher lacunas de conhecimento deixadas pelas certificações de Cloud. Ele incorpora várias skills que engenherios de Cloud e DevOps usam no dia a dia. 
+The Cloud Resume Challenge é um projeto hands-on feito para preencher lacunas de conhecimento deixadas pelas certificações de Cloud. Ele incorpora várias skills que engenherios de Cloud e DevOps usam no dia a dia como Terraform, AWS Lambda, DynamoDB e API Gateway.
 
 https://cloudresumechallenge.dev/docs/the-challenge/aws/
 
@@ -32,14 +32,6 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
 ## 📁 Estrutura do Projeto
 
 ```
-├── frontend/                    # Código do site estático
-│   ├── index.html              # Página principal
-│   ├── assets/                 # Imagens e recursos
-│   └── scripts/                # JavaScript (fetch_get.js, fetch_post.js)
-├── backend/                    # Funções Lambda
-│   ├── lambda_get.py          # Buscar contador do DynamoDB
-│   ├── lambda_update_item.py  # Atualizar contador
-│   └── post_request.json      # Exemplo de requisição
 ├── cypress/                    # Testes automatizados
 │   └── api_test.cy.js         # Testes da API
 └── terraform/                 # Infrastructure as Code
@@ -47,6 +39,9 @@ https://cloudresumechallenge.dev/docs/the-challenge/aws/
     │   ├── backend-api/       # Módulo API Gateway + Lambda + DynamoDB
     │   └── frontend/          # Módulo S3 + CloudFront
     ├── www/                   # Arquivos web para deploy
+    │   ├── assets/           # Imagens e recursos
+    │   ├── fetch_post.js     # JavaScript para API
+    │   └── index.html        # Página principal
     ├── main.tf               # Configuração principal
     └── outputs.tf            # Outputs dos recursos
 ```
